@@ -1,0 +1,104 @@
+<div class="mdk-drawer  js-mdk-drawer" id="default-drawer" data-align="start" data-opened data-persistent>
+    <div class="mdk-drawer__content">
+        <div class="sidebar sidebar-dark sidebar-left simplebar bg-dark" data-simplebar>
+            <div class="d-flex align-items-center sidebar-p-a border-bottom sidebar-account flex-shrink-0" style="height: 75px;">
+                <a href="index.html" class="flex d-flex align-items-center text-underline-0 text-body">
+                    <span class="flex d-flex flex-column">
+                        <strong class="h5 text-body mb-0">ADMIN</strong>
+                    </span>
+                </a>
+            </div>
+            <div class="tab-content">
+                <div id="sm-menu" class="tab-pane show active" role="tabpanel" aria-labelledby="sm-menu-tab">
+                    <ul class="sidebar-menu flex">
+                        <li class="sidebar-menu-item">
+                            <a class="sidebar-menu-button" routerLink="/dashboard">
+                                <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">home</i>
+                                <span class="sidebar-menu-text">Bảng điều khiển</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-menu-item">
+                            <a class="sidebar-menu-button" routerLink="">
+                                <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">account_box</i>
+                                <span class="sidebar-menu-text">Quản lý người dùng</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-menu-item">
+                            <a class="sidebar-menu-button" routerLink="">
+                                <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">description</i>
+                                <span class="sidebar-menu-text">Quản lý tin tức</span>
+                            </a>
+                        </li>
+
+
+                        <li class="sidebar-menu-item">
+                            <a class="sidebar-menu-button" data-toggle="collapse" href="#pages_menu0">
+                                <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">description</i>
+                                <span class="sidebar-menu-text">Quản lý Bài đăng</span>
+                                <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                            </a>
+                            <ul class="sidebar-submenu collapse" id="pages_menu0">
+                                <li class="sidebar-menu-item">
+                                    <a class="sidebar-menu-button" routerLink="">
+                                        <span class="sidebar-menu-text">Chưa duyệt</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-menu-item">
+                                    <a class="sidebar-menu-button" routerLink="">
+                                        <span class="sidebar-menu-text">Đã duyệt</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-menu-item">
+                                    <a class="sidebar-menu-button" routerLink="">
+                                        <span class="sidebar-menu-text">Không được duyệt</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+
+                        <li class="sidebar-menu-item">
+                            <a class="sidebar-menu-button" data-toggle="collapse" href="#pages_menu">
+                                <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">assignment</i>
+                                <span class="sidebar-menu-text">Thống kê</span>
+                                <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                            </a>
+                            <ul class="sidebar-submenu collapse" id="pages_menu">
+                                <li class="sidebar-menu-item">
+                                    <a class="sidebar-menu-button" routerLink="/statistical-post">
+                                        <span class="sidebar-menu-text">Số bài đăng</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-menu-item">
+                                    <a class="sidebar-menu-button"routerLink="/statistical-nap">
+                                        <span class="sidebar-menu-text">Số tiền nạp</span>
+                                    </a>
+                                </li>
+                                
+                                <li class="sidebar-menu-item">
+                                    <a class="sidebar-menu-button"routerLink="/statistical-view">
+                                        <span class="sidebar-menu-text">Bài đăng có nhiều lượt xem</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        
+                    </ul>
+                </div>
+                
+            </div>
+
+            <div class="mt-auto sidebar-p-a sidebar-b-t d-flex flex-column flex-shrink-0">
+                <a class="sidebar-link mb-2" style="height: 35px;" >Settings</a>
+                <a class="sidebar-link" style="height: 35px;">
+                    Logout
+                    <i class="sidebar-menu-icon ml-2 material-icons icon-16pt">exit_to_app</i>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>

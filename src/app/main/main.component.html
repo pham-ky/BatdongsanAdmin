@@ -1,0 +1,28 @@
+
+
+<div class="mdk-drawer-layout js-mdk-drawer-layout" data-push data-responsive-width="992px" data-fullbleed>
+    <div class="mdk-drawer-layout__content" style="transform: translate3d(0px, 0px, 0px);">
+
+        <!-- Header Layout -->
+        <div class="mdk-header-layout js-mdk-header-layout" data-has-scrolling-region>
+
+            <app-navbar></app-navbar>
+
+            <!-- Header Layout Content -->
+            <div
+                class="mdk-header-layout__content mdk-header-layout__content--fullbleed mdk-header-layout__content--scrollable page" style="padding-top: 74px;">
+                <router-outlet></router-outlet>
+
+            </div>
+            <!-- // END header-layout__content -->
+
+        </div>
+        <!-- // END header-layout -->
+
+    </div>
+    <!-- // END drawer-layout__content -->
+
+    <app-slibar></app-slibar>
+
+</div>
+<!-- // END drawer-layout -->

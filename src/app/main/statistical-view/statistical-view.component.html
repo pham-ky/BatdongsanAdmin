@@ -1,0 +1,27 @@
+
+<div class="row no-gutters">
+        <h3>Top 10 bài đăng có số lượt xem cao nhất</h3><br>
+        <table>
+            <thead>
+                <th>STT</th>
+                <th>Mã tin</th>
+                <th>Mã người đăng</th>
+                <th>Tiêu đề bài đăng</th>
+                <th>Ngày bắt đầu</th>
+                <th>Ngày kết thúc</th>
+                <th>Lượt xem</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of post, index as i">
+                    <td style="text-align: center;">{{i+1}}</td>
+                    <td style="text-align: center;">{{item.maBaiDang}}</td>
+                    <td style="text-align: center;">{{item.maTk}}</td>
+                    <td title="{{item.tieuDe}}">{{item.tieuDe.substr(0,50)}}...</td>
+                    <td style="text-align: center;">{{item.ngayBatDau|date:'shortDate'}}</td>
+                    <td style="text-align: center;">{{item.ngayKetThuc|date:'shortDate'}}</td>
+                    <td style="text-align: center;">{{item.luotXem}}</td>
+                </tr>
+            </tbody>
+        </table>
+        
+</div>
