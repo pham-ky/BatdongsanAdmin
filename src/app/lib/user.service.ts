@@ -7,7 +7,7 @@ const httpOptions = {
   method: 'POST',
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
-    
+
   }),
 };
 @Injectable({
@@ -18,11 +18,11 @@ export class UserService {
   private adminLogin = new BehaviorSubject({});
   public admin$ = this.adminLogin.asObservable();
   constructor(private readonly http: HttpClient) {
-    let local_storage = JSON.parse(localStorage.getItem('admin')||'{}');
+    let local_storage = JSON.parse(localStorage.getItem('admin') || '{}');
     if (!local_storage) {
       local_storage = {};
     }
-    this.adminLogin.next(local_storage); 
+    this.adminLogin.next(local_storage);
   }
   public get adminValue(): any {
     return this.adminLogin.value;
@@ -41,5 +41,23 @@ export class UserService {
   logout() {
     localStorage.removeItem('admin');
     this.adminLogin.next('');
+  }
+  getAll() {
+    const url = `${this.API_URL}/GetAllUser`;
+    return this.http.get(url);
+  }
+  Getloai(x: any) {
+    const url = `${this.API_URL}/getLoai/${x}`;
+    return this.http.get(url);
+  }
+  add(adm: any): Observable<number> {
+    const url = `${this.API_URL}/addAdmin`;
+    var body = JSON.stringify(adm);
+    return this.http.post<any>(url, body, httpOptions);
+  }
+  
+  Change(x: any) {
+    const url = `${this.API_URL}/TrangThai/${x}`;
+    return this.http.get(url);
   }
 }

@@ -1,19 +1,7 @@
-table {
-    width: 96%;
-    margin-left: 2%;
-    border-collapse: collapse;
-}
 
-table td {
-    border: 1px solid black;
-    font-size: 14px;
-    padding: 10px;
-}
 
 table th {
-    border: 1px solid black;
     font-size: 14px;
-    padding: 10px;
     text-align: center;
 }
 

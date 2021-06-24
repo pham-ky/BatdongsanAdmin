@@ -1,0 +1,52 @@
+<div class="top">
+    <h2>Nạp tiền</h2>
+    <div class="top1">
+        <p-dropdown [style]="{'width': '64%'}" [options]="user" [(ngModel)]="selectedId" optionLabel="maTk" [filter]="true" filterBy="maTk"
+        [showClear]="true" placeholder="Mã người nạp" class="p-inputtext-sm1">
+        <ng-template pTemplate="selectedItem">
+            <div class="country-item country-item-value" *ngIf="selectedId">
+                <div>{{selectedId.maTk}}</div>
+            </div>
+        </ng-template>
+    </p-dropdown>
+    </div>
+    <div class="top2">
+        <p-inputNumber [style]="{'width': '64%'}"  [(ngModel)]="inVal" mode="decimal" locale="vi-VI" [minFractionDigits]="0" placeholder="Số tiền nạp">
+        </p-inputNumber> VNĐ
+    </div>
+    <div class="top3">
+        <p-dropdown [style]="{'width': '64%'}"  [options]="hinhthuc" [(ngModel)]="selectedHT" placeholder="Hình thức nạp"></p-dropdown>
+    </div>
+    <div class="top4">
+        <p-button [style]="{'border-radius': '5px'}" (onClick)="Nap()" label="Nạp"></p-button>
+    </div>
+</div>
+
+<div class="bot">
+    <h3>Danh sách nạp</h3>
+    <table class="table table-hover">
+        <thead>
+            <th>STT</th>
+            <th>Mã nạp</th>
+            <th>Mã người nạp</th>
+            <th>Số tiền nạp</th>
+            <th>Hình thức</th>
+            <th>Ngày nạp</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of list, index as i">
+                <td style="text-align: center;">{{i+1}}</td>
+                <td style="text-align: center;">{{item.maNap}}</td>
+                <td style="text-align: center;">{{item.maTk}}</td>
+                <td style="text-align: center;">{{item.soTienNap}}</td>
+                <td style="text-align: center;">{{item.hinhThuc}}</td>
+                <td style="text-align: center;">{{item.ngayNap|date:'shortDate'}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div style="position: relative;margin-left: 40%;">
+        <ngb-pagination [collectionSize]="total" [pageSize]="10" [(page)]="page" [maxSize]="3" [rotate]="true"
+            (pageChange)="loadPage($event)">
+        </ngb-pagination>
+    </div>
+</div>

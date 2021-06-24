@@ -1,1 +1,21 @@
-<p>statistical-nap works!</p>
+<div class="rower">
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="info-box">
+        <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+  
+        <div class="info-box-content">
+          <span class="info-box-text">Số tiền được nạp tháng {{thang}}</span><br>
+          <span class="info-text">{{totalMoney}}</span>
+          
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div>
+    
+</div>
+<div id="chart">
+    <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart" [xaxis]="chartOptions.xaxis"
+      [stroke]="chartOptions.stroke" [tooltip]="chartOptions.tooltip" [dataLabels]="chartOptions.dataLabels">
+    </apx-chart>
+  </div>

@@ -27,8 +27,8 @@ export type ChartOptions = {
 })
 export class StatisticalPostComponent extends BaseComponent implements OnInit {
 
-  @ViewChild("chart") chart: ChartComponent| any;
-  public chartOptions: Partial<ChartOptions>| any;
+  @ViewChild("chart") chart: ChartComponent | any;
+  public chartOptions: Partial<ChartOptions> | any;
 
   a: any; a1: any;
   b: any; b1: any;
@@ -58,24 +58,24 @@ export class StatisticalPostComponent extends BaseComponent implements OnInit {
 
       this.value = Object.values(res);
 
-      this.a = this.value[0][0]; 
-      this.b = this.value[0][1]; 
-      this.c = this.value[0][2]; 
-      this.d = this.value[0][3]; 
-      this.e = this.value[0][4]; 
+      this.a = this.value[0][0];
+      this.b = this.value[0][1];
+      this.c = this.value[0][2];
+      this.d = this.value[0][3];
+      this.e = this.value[0][4];
 
 
       this.totalPost = this.value[1];
 
-      this.a1 = this.value[2][0]; 
-      this.b1 = this.value[2][1]; 
-      this.c1 = this.value[2][2]; 
-      this.d1 = this.value[2][3]; 
+      this.a1 = this.value[2][0];
+      this.b1 = this.value[2][1];
+      this.c1 = this.value[2][2];
+      this.d1 = this.value[2][3];
       this.e1 = this.value[2][4];
 
-      this.totalpay = this.value[3].toLocaleString('it-IT', { style: 'currency', currency: 'VND' });;
-      
-      
+      this.totalpay = this.value[3].toLocaleString('it-IT', { style: 'currency', currency: 'VND' });
+
+
 
       this.chartOptions = {
         series: [
@@ -127,104 +127,92 @@ export class StatisticalPostComponent extends BaseComponent implements OnInit {
     var months = new Array("Jan", "Feb", "Mar",
       "Apr", "May", "Jun", "Jul", "Aug", "Sep",
       "Oct", "Nov", "Dec");
-      
-      this.thang = [curr_month+1] + "-"+ curr_year; 
+
+    this.thang = [curr_month + 1] + "-" + curr_year;
     switch (curr_month) {
       case 0:
-        this.month5 = months[curr_month + 7] + "-" + (curr_year - 1);
         this.month4 = months[curr_month + 8] + "-" + (curr_year - 1);
         this.month3 = months[curr_month + 9] + "-" + (curr_year - 1);
         this.month2 = months[curr_month + 10] + "-" + (curr_year - 1);
         this.month1 = months[curr_month + 11] + "-" + (curr_year - 1);
-        this.month0 = months[curr_month] + "-" + curr_year;
+        this.month0 = months[curr_month + 1] + "-" + curr_year;
         break;
       case 1:
-        this.month5 = months[curr_month + 8] + "-" + (curr_year - 1);
         this.month4 = months[curr_month + 9] + "-" + (curr_year - 1);
         this.month3 = months[curr_month + 10] + "-" + (curr_year - 1);
         this.month2 = months[curr_month + 11] + "-" + (curr_year - 1);
-        this.month1 = months[curr_month - 1] + "-" + curr_year;
-        this.month0 = months[curr_month] + "-" + curr_year;
+        this.month1 = months[curr_month] + "-" + curr_year;
+        this.month0 = months[curr_month + 1] + "-" + curr_year;
         break;
       case 2:
-        this.month5 = months[curr_month + 9] + "-" + (curr_year - 1);
         this.month4 = months[curr_month + 10] + "-" + (curr_year - 1);
         this.month3 = months[curr_month + 11] + "-" + (curr_year - 1);
-        this.month2 = months[curr_month - 2] + "-" + curr_year;
-        this.month1 = months[curr_month - 1] + "-" + curr_year;
-        this.month0 = months[curr_month] + "-" + curr_year;
+        this.month2 = months[curr_month - 1] + "-" + curr_year;
+        this.month1 = months[curr_month] + "-" + curr_year;
+        this.month0 = months[curr_month + 1] + "-" + curr_year;
         break;
       case 3:
-        this.month5 = months[curr_month + 10] + "-" + (curr_year - 1);
         this.month4 = months[curr_month + 11] + "-" + (curr_year - 1);
-        this.month3 = months[curr_month - 3] + "-" + curr_year;
-        this.month2 = months[curr_month - 2] + "-" + curr_year;
-        this.month1 = months[curr_month - 1] + "-" + curr_year;
-        this.month0 = months[curr_month] + "-" + curr_year;
+        this.month3 = months[curr_month - 2] + "-" + curr_year;
+        this.month2 = months[curr_month - 1] + "-" + curr_year;
+        this.month1 = months[curr_month] + "-" + curr_year;
+        this.month0 = months[curr_month + 1] + "-" + curr_year;
         break;
       case 4:
-        this.month5 = months[curr_month + 11] + "-" + (curr_year - 1);
-        this.month4 = months[curr_month - 4] + "-" + curr_year;
-        this.month3 = months[curr_month - 3] + "-" + curr_year;
-        this.month2 = months[curr_month - 2] + "-" + curr_year;
-        this.month1 = months[curr_month - 1] + "-" + curr_year;
-        this.month0 = months[curr_month] + "-" + curr_year;
+        this.month4 = months[curr_month - 3] + "-" + curr_year;
+        this.month3 = months[curr_month - 2] + "-" + curr_year;
+        this.month2 = months[curr_month - 1] + "-" + curr_year;
+        this.month1 = months[curr_month] + "-" + curr_year;
+        this.month0 = months[curr_month + 1] + "-" + curr_year;
         break;
       case 5:
-        this.month5 = months[curr_month - 5] + "-" + curr_year;
-        this.month4 = months[curr_month - 4] + "-" + curr_year;
-        this.month3 = months[curr_month - 3] + "-" + curr_year;
-        this.month2 = months[curr_month - 2] + "-" + curr_year;
-        this.month1 = months[curr_month - 1] + "-" + curr_year;
-        this.month0 = months[curr_month] + "-" + curr_year;
+        this.month4 = months[curr_month - 3] + "-" + curr_year;
+        this.month3 = months[curr_month - 2] + "-" + curr_year;
+        this.month2 = months[curr_month - 1] + "-" + curr_year;
+        this.month1 = months[curr_month] + "-" + curr_year;
+        this.month0 = months[curr_month + 1] + "-" + curr_year;
         break;
       case 6:
-        this.month5 = months[curr_month - 5] + "-" + curr_year;
-        this.month4 = months[curr_month - 4] + "-" + curr_year;
-        this.month3 = months[curr_month - 3] + "-" + curr_year;
-        this.month2 = months[curr_month - 2] + "-" + curr_year;
-        this.month1 = months[curr_month - 1] + "-" + curr_year;
-        this.month0 = months[curr_month] + "-" + curr_year;
+        this.month4 = months[curr_month - 3] + "-" + curr_year;
+        this.month3 = months[curr_month - 2] + "-" + curr_year;
+        this.month2 = months[curr_month - 1] + "-" + curr_year;
+        this.month1 = months[curr_month] + "-" + curr_year;
+        this.month0 = months[curr_month + 1] + "-" + curr_year;
         break;
       case 7:
-        this.month5 = months[curr_month - 5] + "-" + curr_year;
-        this.month4 = months[curr_month - 4] + "-" + curr_year;
-        this.month3 = months[curr_month - 3] + "-" + curr_year;
-        this.month2 = months[curr_month - 2] + "-" + curr_year;
-        this.month1 = months[curr_month - 1] + "-" + curr_year;
-        this.month0 = months[curr_month] + "-" + curr_year;
+        this.month4 = months[curr_month - 3] + "-" + curr_year;
+        this.month3 = months[curr_month - 2] + "-" + curr_year;
+        this.month2 = months[curr_month - 1] + "-" + curr_year;
+        this.month1 = months[curr_month] + "-" + curr_year;
+        this.month0 = months[curr_month + 1] + "-" + curr_year;
         break;
       case 8:
-        this.month5 = months[curr_month - 5] + "-" + curr_year;
-        this.month4 = months[curr_month - 4] + "-" + curr_year;
-        this.month3 = months[curr_month - 3] + "-" + curr_year;
-        this.month2 = months[curr_month - 2] + "-" + curr_year;
-        this.month1 = months[curr_month - 1] + "-" + curr_year;
-        this.month0 = months[curr_month] + "-" + curr_year;
+        this.month4 = months[curr_month - 3] + "-" + curr_year;
+        this.month3 = months[curr_month - 2] + "-" + curr_year;
+        this.month2 = months[curr_month - 1] + "-" + curr_year;
+        this.month1 = months[curr_month] + "-" + curr_year;
+        this.month0 = months[curr_month + 1] + "-" + curr_year;
         break;
       case 9:
-        this.month5 = months[curr_month - 5] + "-" + curr_year;
-        this.month4 = months[curr_month - 4] + "-" + curr_year;
-        this.month3 = months[curr_month - 3] + "-" + curr_year;
-        this.month2 = months[curr_month - 2] + "-" + curr_year;
-        this.month1 = months[curr_month - 1] + "-" + curr_year;
-        this.month0 = months[curr_month] + "-" + curr_year;
+        this.month4 = months[curr_month - 3] + "-" + curr_year;
+        this.month3 = months[curr_month - 2] + "-" + curr_year;
+        this.month2 = months[curr_month - 1] + "-" + curr_year;
+        this.month1 = months[curr_month] + "-" + curr_year;
+        this.month0 = months[curr_month + 1] + "-" + curr_year;
         break;
       case 10:
-        this.month5 = months[curr_month - 5] + "-" + curr_year;
-        this.month4 = months[curr_month - 4] + "-" + curr_year;
-        this.month3 = months[curr_month - 3] + "-" + curr_year;
-        this.month2 = months[curr_month - 2] + "-" + curr_year;
-        this.month1 = months[curr_month - 1] + "-" + curr_year;
-        this.month0 = months[curr_month] + "-" + curr_year;
+        this.month4 = months[curr_month - 3] + "-" + curr_year;
+        this.month3 = months[curr_month - 2] + "-" + curr_year;
+        this.month2 = months[curr_month - 1] + "-" + curr_year;
+        this.month1 = months[curr_month] + "-" + curr_year;
+        this.month0 = months[curr_month + 1] + "-" + curr_year;
         break;
       case 11:
-        this.month5 = months[curr_month - 5] + "-" + curr_year;
-        this.month4 = months[curr_month - 4] + "-" + curr_year;
-        this.month3 = months[curr_month - 3] + "-" + curr_year;
-        this.month2 = months[curr_month - 2] + "-" + curr_year;
-        this.month1 = months[curr_month - 1] + "-" + curr_year;
-        this.month0 = months[curr_month] + "-" + curr_year;
+        this.month4 = months[curr_month - 3] + "-" + curr_year;
+        this.month3 = months[curr_month - 2] + "-" + curr_year;
+        this.month2 = months[curr_month - 1] + "-" + curr_year;
+        this.month1 = months[curr_month] + "-" + curr_year;
+        this.month0 = months[curr_month + 1] + "-" + curr_year;
         break;
 
       default:

@@ -1,7 +1,10 @@
 
 <div class="row no-gutters">
-        <h3>Top 10 bài đăng có số lượt xem cao nhất</h3><br>
-        <table>
+        <h3>Top {{x}} bài đăng có số lượt xem cao nhất</h3>
+        <p-dropdown style="position: relative; left: 640px;" [options]="top" [(ngModel)]="x"   placeholder="{{x}}" (onClick)="select()">
+            
+        </p-dropdown>
+        <table class="table table-hover">
             <thead>
                 <th>STT</th>
                 <th>Mã tin</th>
@@ -23,5 +26,9 @@
                 </tr>
             </tbody>
         </table>
-        
+        <div style="position: relative;margin-left: 40%;">
+            <ngb-pagination [collectionSize]="x" [pageSize]="10" [(page)]="page" [maxSize]="3" [rotate]="true"
+                (pageChange)="loadPage($event)">
+            </ngb-pagination>
+        </div>
 </div>

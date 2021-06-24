@@ -1,0 +1,62 @@
+<div class="content-y">
+    <h2 style="float: left;" *ngIf="trangthai == 0">Danh sách bài đăng không được duyệt</h2>
+    <h2 style="float: left;" *ngIf="trangthai == 1">Danh sách bài đăng chưa duyệt</h2>
+    <h2 style="float: left;" *ngIf="trangthai == 2">Danh sách bài đăng đã duyệt</h2>
+</div>
+
+<div class="table">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col" style="text-align: center;">TT</th>
+                <th scope="col">Mã bài đăng</th>
+                <th scope="col">Tiêu đề</th>
+                <th scope="col">Ngày bắt đầu</th>
+                <th scope="col">Ngày kết thúc</th>
+                <th scope="col" style="text-align: center;">Trạng thái</th>
+            </tr>
+        </thead>
+        <!-- Không duyệt -->
+        <tbody *ngIf="trangthai == 0">
+            <tr *ngFor="let o of list; index as i">
+                <td style="text-align: center; font-weight: bold;">{{i+1}}</td>
+                <td style="text-align: center;">{{o.maBaiDang}}</td>
+                <td>{{o.tieuDe.substr(0,30)}}...</td>
+                <td style="text-align: center;">{{o.ngayBatDau|date:'shortDate'}}</td>
+                <td style="text-align: center;">{{o.ngayKetThuc|date:'shortDate'}}</td>
+                <td style="text-align: center;">Không duyệt </td>
+            </tr>
+        </tbody>
+        <!-- Chưa duyệt -->
+        <tbody *ngIf="trangthai == 1">
+            <tr *ngFor="let o of list; index as i">
+                <td style="text-align: center; font-weight: bold;">{{i+1}}</td>
+                <td style="text-align: center;">{{o.maBaiDang}}</td>
+                <td title="{{o.tieuDe}}">{{o.tieuDe.substr(0,50)}}...</td>
+                <td style="text-align: center;">{{o.ngayBatDau|date:'shortDate'}}</td>
+                <td style="text-align: center;">{{o.ngayKetThuc|date:'shortDate'}}</td>
+                <td style="text-align: center;">
+                    <p-button label="Duyệt" icon="pi pi-check" iconPos="left" (click)="Duyet(o.maBaiDang)"></p-button>
+                    <button pButton type="button" label="Không duyệt" class="p-button-danger" icon="pi pi-times" iconPos="left" (click)="KDuyet(o.maBaiDang)"></button>
+                </td>
+            </tr>
+        </tbody>
+        <!-- Đã duyệt -->
+        <tbody *ngIf="trangthai == 2">
+            <tr *ngFor="let o of list; index as i">
+                <td style="text-align: center; font-weight: bold;">{{i+1}}</td>
+                <td style="text-align: center;">{{o.maBaiDang}}</td>
+                <td>{{o.tieuDe.substr(0,30)}}...</td>
+                <td style="text-align: center;">{{o.ngayBatDau|date:'shortDate'}}</td>
+                <td style="text-align: center;">{{o.ngayKetThuc|date:'shortDate'}}</td>
+                <td style="text-align: center;">Đã duyệt</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="shop_toolbar t_bottom" style="position: relative;margin-left: 40%;">
+        <ngb-pagination [collectionSize]="totalItems" [pageSize]="10" [(page)]="page" [maxSize]="3" [rotate]="true"
+            (pageChange)="loadPage($event)">
+        </ngb-pagination>
+    </div>
+</div>
+

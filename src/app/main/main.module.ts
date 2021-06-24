@@ -9,7 +9,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { StatisticalPostComponent } from './statistical-post/statistical-post.component';
 import { StatisticalNapComponent } from './statistical-nap/statistical-nap.component';
 import { StatisticalViewComponent } from './statistical-view/statistical-view.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import {DropdownModule} from 'primeng/dropdown';
+import {InputNumberModule} from 'primeng/inputnumber';
+import {ButtonModule} from 'primeng/button';
+import {DialogModule} from 'primeng/dialog';
+import { NaptienComponent } from './naptien/naptien.component';
+import { PostComponent } from './post/post.component';
+import { UserComponent } from './user/user.component';
+import { NewsComponent } from './news/news.component';
 export const mainRoute: Routes = [
   {
     path: '',
@@ -36,6 +46,22 @@ export const mainRoute: Routes = [
         path: 'statistical-view',
         component: StatisticalViewComponent,
       },
+      {
+        path: 'naptien',
+        component: NaptienComponent,
+      },
+      {
+        path: 'post/:id',
+        component: PostComponent,
+      },
+      {
+        path: 'user',
+        component: UserComponent,
+      },
+      {
+        path: 'news',
+        component: NewsComponent,
+      },
     ]
   }
 ]
@@ -46,13 +72,24 @@ export const mainRoute: Routes = [
     DashboardComponent,
     StatisticalPostComponent,
     StatisticalNapComponent,
-    StatisticalViewComponent
+    StatisticalViewComponent,
+    NaptienComponent,
+    PostComponent,
+    UserComponent,
+    NewsComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
     NgApexchartsModule,
     HttpClientModule,
+    DropdownModule,
+    InputNumberModule,
+    ButtonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgbModule,
+    DialogModule,
     RouterModule.forChild(mainRoute),
   ]
 })

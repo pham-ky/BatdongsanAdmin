@@ -1,0 +1,57 @@
+<div class="top">
+    <h2 *ngIf="selectedLoai=='User'">Danh sách người dùng</h2>
+    <h2 *ngIf="selectedLoai=='Admin'">Danh sách người quản trị</h2>
+    <div class="right">
+        <button class="btnX" pButton type="button" (click)="showDialog()" label="Thêm"></button>
+        <p-dropdown [style]="{'width': '100%'}" [options]="loai" [(ngModel)]="selectedLoai" (onClick)="GET()"
+            placeholder="Loại tài khoản"></p-dropdown>
+    </div>
+</div>
+<div class="bot">
+    <table class="table table-hover">
+        <thead>
+            <th>STT</th>
+            <th>Mã người dùng</th>
+            <th>Tên người dùng</th>
+            <th>Địa chỉ</th>
+            <th>Số điện thoại</th>
+            <th>Email</th>
+            <th>Chức năng</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of user, index as i">
+                <td style="text-align: center;">{{i+1}}</td>
+                <td style="text-align: center;">{{item.maTk}}</td>
+                <td>{{item.hoTen}}</td>
+                <td>{{item.diaChi}}</td>
+                <td style="text-align: center;">{{item.sdt}}</td>
+                <td>{{item.email}}</td>
+                <td style="text-align: center;" *ngIf="item.trangThai==0"><i class="fa fa-lock" aria-hidden="true" (click)="change(item.maTk)"
+                        title="Khóa tài khoản"></i></td>
+                <td style="text-align: center;" *ngIf="item.trangThai==1"><i class="fa fa-unlock" aria-hidden="true" (click)="change(item.maTk)"
+                        title="Mở khóa tài khoản"></i></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p-dialog [(visible)]="display" [style]="{width: '30vw'}" [dismissableMask]="true" [modal]="true">
+    <ng-template pTemplate="header">
+        <h3>Thêm tài khoản quản trị viên</h3>
+    </ng-template>
+    <div style="width: 50%; margin-left: 25%;">
+        <label style="font-weight: bold;">Tài khoản:</label>
+      <input type="text" class="form-control" [(ngModel)]="TK" placeholder="Tài khoản">
+      <label style="font-weight: bold;">Mật khẩu:</label>
+      <input type="password" class="form-control" [(ngModel)]="MK" placeholder="Mật khẩu">
+    </div>
+        
+    <p-footer>
+        <button type="submit" class="btn btn-primary waves-effect waves-light mr-2" (click)="addAdmin()">
+            <i class="mdi mdi-check"></i>
+            Thêm
+          </button>
+        <button type="button" (click)="display = false" class="btn btn-danger waves-effect waves-light"> <i
+            class="mdi mdi-window-close"></i>
+          Huỷ</button>
+    </p-footer>
+</p-dialog>
