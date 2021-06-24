@@ -35,11 +35,14 @@
               "node_modules/primeicons/primeicons.css",
               "src/styles.css",
               "./node_modules/alertifyjs/build/css/alertify.min.css",
-              "./node_modules/alertifyjs/build/css/themes/bootstrap.min.css"
+              "./node_modules/alertifyjs/build/css/themes/bootstrap.min.css",
+              "./node_modules/quill/dist/quill.core.css",
+              "./node_modules/quill/dist/quill.snow.css"
               
             ],
             "scripts": [
-              "./node_modules/alertifyjs/build/alertify.min.js"
+              "./node_modules/alertifyjs/build/alertify.min.js",
+              "./node_modules/quill/dist/quill.js"
             ]
           },
           "configurations": {

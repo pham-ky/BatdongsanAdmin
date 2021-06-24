@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsComponent implements OnInit {
 
+  text: any;
   constructor() { }
 
   ngOnInit(): void {
   }
+  display: boolean = false;
 
+  showDialog() {
+    this.display = true;
+  }
 }

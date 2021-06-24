@@ -1,0 +1,24 @@
+.top {
+    width: 95%;
+    margin-left: 2.5%;
+    height: 100px;
+}
+
+.right {
+    width: 155px;
+    float: right;
+}
+
+.bot{
+    width: 95%;
+    margin-left: 2.5%;
+}
+
+table th {
+    font-size: 14px;
+    text-align: center;
+}
+
+.btnX {
+    border-radius: 2px;
+}

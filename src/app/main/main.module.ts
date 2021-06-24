@@ -16,6 +16,7 @@ import {DropdownModule} from 'primeng/dropdown';
 import {InputNumberModule} from 'primeng/inputnumber';
 import {ButtonModule} from 'primeng/button';
 import {DialogModule} from 'primeng/dialog';
+import {EditorModule} from 'primeng/editor';
 import { NaptienComponent } from './naptien/naptien.component';
 import { PostComponent } from './post/post.component';
 import { UserComponent } from './user/user.component';
@@ -90,6 +91,7 @@ export const mainRoute: Routes = [
     ReactiveFormsModule,
     NgbModule,
     DialogModule,
+    EditorModule,
     RouterModule.forChild(mainRoute),
   ]
 })
