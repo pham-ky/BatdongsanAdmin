@@ -17,6 +17,7 @@ import {InputNumberModule} from 'primeng/inputnumber';
 import {ButtonModule} from 'primeng/button';
 import {DialogModule} from 'primeng/dialog';
 import {EditorModule} from 'primeng/editor';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { NaptienComponent } from './naptien/naptien.component';
 import { PostComponent } from './post/post.component';
 import { UserComponent } from './user/user.component';
@@ -92,6 +93,7 @@ export const mainRoute: Routes = [
     NgbModule,
     DialogModule,
     EditorModule,
+    ConfirmDialogModule,
     RouterModule.forChild(mainRoute),
   ]
 })
