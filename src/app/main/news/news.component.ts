@@ -42,6 +42,8 @@ export class NewsComponent implements OnInit {
   displayView: boolean = false;
   displayEdit: boolean = false;
   showAdd() {
+    this.tieude = "";
+    this.text = "";
     this.displayAdd = true;
   }
   add() {
